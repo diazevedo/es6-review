@@ -1,0 +1,17 @@
+{
+  "name": "es6-features",
+  "version": "1.0.0",
+  "description": "Reviewing es6 features",
+  "main": "index.js",
+  "scripts": {
+    "babel": "babel ./main.js -o ./bundle.js -w"
+  },
+  "author": "Diego Azevedo",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/preset-env": "^7.5.5"
+  }
+}
