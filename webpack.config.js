@@ -4,7 +4,7 @@
 //depois la no package.json eu mudo o comando (nos scripts)
 
 module.exports = {
-  entry: "./src/main.js",
+  entry: ["@babel/polyfill", "./src/main.js"],
   output: {
     path: __dirname + "/public",
     filename: "bundle.js"
