@@ -4,7 +4,8 @@
   "description": "Reviewing es6 features",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode=development -w"
+    "dev": "webpack-dev-server --mode=development",
+    "build": "webpack --mode=production"
   },
   "author": "Diego Azevedo",
   "license": "ISC",
@@ -13,8 +14,9 @@
     "@babel/core": "^7.5.5",
     "@babel/node": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.6",
-    "babel-loader": "^8.0.6"
+    "webpack-dev-server": "^3.8.0"
   }
 }
