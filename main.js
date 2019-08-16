@@ -13,3 +13,6 @@ const myList = new TodoList();
 
 const $button = document.getElementById("button");
 $button.onclick = () => myList.addTodo();
+
+import { sum } from "./functions";
+console.log(sum(1, 2));
