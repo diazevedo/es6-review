@@ -20,23 +20,45 @@ class App {
     const repoInput = this.inputEl.value;
 
     if (repoInput.length === 0) return;
-    //Rocketseat/bootcamp-nodejs-desafio-01
-    const response = await api.get(`/repos/${repoInput}`);
-    const {
-      name,
-      owner: { avatar_url },
-      description,
-      html_url
-    } = response.data;
-    console.log(response);
-    this.repositories.push({
-      name,
-      description,
-      avatar_url,
-      html_url
-    });
 
-    this.render();
+    this.setLoading();
+
+    try {
+      const response = await api.get(`/repos/${repoInput}`);
+
+      const {
+        name,
+        owner: { avatar_url },
+        description,
+        html_url
+      } = response.data;
+
+      this.repositories.push({
+        name,
+        description,
+        avatar_url,
+        html_url
+      });
+
+      this.render();
+    } catch (err) {
+      alert("Sorry, we could not found your repo.");
+    }
+
+    this.setLoading(false);
+  }
+
+  setLoading(loading = true) {
+    if (loading) {
+      let loadingEl = document.createElement("div");
+      loadingEl.setAttribute("id", "loading");
+      loadingEl.classList.add("loading");
+      loadingEl.textContent = "Loading...";
+
+      this.formEl.appendChild(loadingEl);
+    } else {
+      document.querySelector("#loading").remove();
+    }
   }
 
   render() {
