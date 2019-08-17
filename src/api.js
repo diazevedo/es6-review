@@ -1,6 +1,6 @@
 import axios from "axios";
 
-class Api {
+class ApiClass {
   static async getUserInfo(username) {
     try {
       const response = await axios.get(
@@ -13,4 +13,8 @@ class Api {
   }
 }
 
-export default Api;
+const api = axios.create({
+  baseUrl: "https.//api.github.com"
+});
+
+export default { api, ApiClass };
